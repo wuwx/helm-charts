@@ -1,2 +1,10 @@
-- name: Helm Chart Releaser
-  uses: helm/chart-releaser-action@v1.2.0
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Helm Chart Releaser
+      uses: helm/chart-releaser-action@v1.2.0
