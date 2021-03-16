@@ -3,6 +3,16 @@ entries:
   nacos:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-03-16T22:57:00.985136646Z"
+    description: A Helm chart for Kubernetes
+    digest: 720cf0492eba196bf5a9c9eb53f3868ce387fc80df31e4f1573b7add41590e37
+    name: nacos
+    type: application
+    urls:
+    - https://github.com/wuwx/helm-charts/releases/download/nacos-0.3.0/nacos-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-03-16T12:10:49.686480227Z"
     description: A Helm chart for Kubernetes
     digest: a7a0c23197d2aaca8b8934452a51fa94c8cd75299365106b951f879db786f0b4
@@ -42,4 +52,4 @@ entries:
     urls:
     - https://github.com/wuwx/helm-charts/releases/download/sentinel-0.1.0/sentinel-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-16T22:55:51.254773729Z"
+generated: "2021-03-16T22:57:00.985177537Z"
