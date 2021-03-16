@@ -21,14 +21,4 @@ entries:
     urls:
     - https://github.com/wuwx/helm-charts/releases/download/nacos-0.2.0/nacos-0.2.0.tgz
     version: 0.2.0
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-03-16T07:16:50.894524634Z"
-    description: A Helm chart for Kubernetes
-    digest: 1509aa9499444577414dc8a7e58375ca15b5d31f9bc2b01260c27f8de650abe7
-    name: nacos
-    type: application
-    urls:
-    - https://github.com/wuwx/helm-charts/releases/download/nacos-0.1.0/nacos-0.1.0.tgz
-    version: 0.1.0
 generated: "2021-03-16T12:06:06.700524839Z"
