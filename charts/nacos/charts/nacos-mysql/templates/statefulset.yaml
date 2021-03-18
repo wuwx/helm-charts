@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "nacos-mysql.fullname" . }}
   labels:
@@ -11,6 +11,7 @@ spec:
   selector:
     matchLabels:
       {{- include "nacos-mysql.selectorLabels" . | nindent 6 }}
+  serviceName: {{ include "nacos-mysql.fullname" . }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -38,7 +39,16 @@ spec:
               protocol: TCP
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: 
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "nacos-mysql.fullname" . }}
+                  key: mysql-root-password
+            - name: MYSQL_DATABASE
+              value: "nacos"
+            - name: MYSQL_USER
+              value: "nacos"
+            - name: MYSQL_PASSWORD
+              value: "nacos"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

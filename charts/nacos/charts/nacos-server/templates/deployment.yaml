@@ -27,6 +27,16 @@ spec:
       serviceAccountName: {{ include "nacos-server.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: init-nacos-mysql
+          image: busybox
+          command:
+            - 'sh'
+            - '-c'
+            - >
+              until nc -z -w 2 {{ .Release.Name }}-nacos-mysql 3306 && echo nacos-mysql ok;
+              do sleep 2;
+              done
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -37,8 +47,14 @@ spec:
             - containerPort: 8848
               protocol: TCP
           env:
-            - name: MODE
-              value: standalone
+            - name: MYSQL_SERVICE_HOST
+              value: {{ .Release.Name }}-nacos-mysql
+            - name: MYSQL_SERVICE_DB_NAME
+              value: nacos
+            - name: MYSQL_SERVICE_USER
+              value: nacos
+            - name: MYSQL_SERVICE_PASSWORD
+              value: nacos
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
