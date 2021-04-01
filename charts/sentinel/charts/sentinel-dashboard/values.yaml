@@ -8,7 +8,7 @@ image:
   repository: bladex/sentinel-dashboard
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.7.2"
+  tag: "1.8.0"
 
 imagePullSecrets: []
 nameOverride: ""

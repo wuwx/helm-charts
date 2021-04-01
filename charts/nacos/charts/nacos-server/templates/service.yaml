@@ -9,6 +9,15 @@ spec:
   ports:
     - port: {{ .Values.service.port }}
       targetPort: 8848
+      name: port1
+      protocol: TCP
+    - port: 9848
+      targetPort: 9848
+      name: port2
+      protocol: TCP
+    - port: 9849
+      targetPort: 9849
+      name: port3
       protocol: TCP
   selector:
     {{- include "nacos-server.selectorLabels" . | nindent 4 }}
