@@ -51,6 +51,17 @@ entries:
     urls:
     - https://github.com/wuwx/helm-charts/releases/download/nacos-0.2.0/nacos-0.2.0.tgz
     version: 0.2.0
+  nacos-server:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-04-01T16:35:02.738396547Z"
+    description: A Helm chart for Kubernetes
+    digest: 4f82a0bafa2077eeb09dfa2ef8a31ce0fa5290f856259af7cc414c6138a11f9e
+    name: nacos-server
+    type: application
+    urls:
+    - https://github.com/wuwx/helm-charts/releases/download/nacos-server-0.1.0/nacos-server-0.1.0.tgz
+    version: 0.1.0
   sentinel:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -62,4 +73,15 @@ entries:
     urls:
     - https://github.com/wuwx/helm-charts/releases/download/sentinel-0.1.0/sentinel-0.1.0.tgz
     version: 0.1.0
-generated: "2021-03-18T16:54:16.820524406Z"
+  sentinel-dashboard:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-04-01T16:35:03.187644267Z"
+    description: A Helm chart for Kubernetes
+    digest: 651de608c5362a9e8f070439210ddf3c59d8a137fd8595afd134e2aa6d8f12ca
+    name: sentinel-dashboard
+    type: application
+    urls:
+    - https://github.com/wuwx/helm-charts/releases/download/sentinel-dashboard-0.1.0/sentinel-dashboard-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-04-01T16:35:03.187658067Z"
